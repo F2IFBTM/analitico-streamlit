@@ -27,12 +27,33 @@ def carica_tabella_aggregati(simbolo):
     return df
 
 def trova_png_piu_recente(simbolo_originale):
-    simbolo_png = simbolo_originale.replace(".", "").replace("_", "")
-    pattern = os.path.join(DIR_PREVISIONI, f"{simbolo_png}_plot_*.png")
-    files = glob.glob(pattern)
-    if not files:
+    """
+    Cerca il file PNG più recente per il simbolo, gestendo punti, underscore e varianti.
+    Esempi validi:
+      AAPL.US_plot_YYYYMMDD_HHMMSS.png
+      AAPL_US_plot_YYYYMMDD_HHMMSS.png
+      AAPLUS_plot_YYYYMMDD_HHMMSS.png
+    """
+    simboli_possibili = [
+        simbolo_originale,                      # AAPL.US
+        simbolo_originale.replace(".", ""),     # AAPLUS
+        simbolo_originale.replace(".", "_"),    # AAPL_US
+        simbolo_originale.replace("_", ""),     # AAPLUS
+        simbolo_originale.replace("_", "."),    # AAPL.US
+    ]
+
+    files_trovati = []
+    for simb in simboli_possibili:
+        pattern = os.path.join(DIR_PREVISIONI, f"{simb}_plot_*.png")
+        trovati = glob.glob(pattern)
+        if trovati:
+            files_trovati.extend(trovati)
+
+    if not files_trovati:
         return None, None
-    latest_file = max(files, key=os.path.getmtime)
+
+    # Prendi il file più recente
+    latest_file = max(files_trovati, key=os.path.getmtime)
     basename = os.path.basename(latest_file)
     ts = None
     try:
@@ -40,6 +61,7 @@ def trova_png_piu_recente(simbolo_originale):
         ts = datetime.strptime(part, "%Y%m%d_%H%M%S")
     except Exception:
         pass
+
     return latest_file, ts
 
 st.set_page_config(page_title="Analitico Dati", layout="wide")
