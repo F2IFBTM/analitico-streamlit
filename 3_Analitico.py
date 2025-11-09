@@ -126,7 +126,8 @@ recap_df = carica_recap()
 simboli = sorted(recap_df["symbol"].dropna().unique())
 
 # === Titolo ===
-st.title("📊 Aggregati, Previsioni ed Elasticità. \n A.P.E.")
+st.title("Aggregati, Previsioni ed Elasticità.")
+st.title("A.P.E.")
 st.markdown("---")
 
 # === Selettore simbolo ===
