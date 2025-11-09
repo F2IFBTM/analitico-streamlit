@@ -1,8 +1,8 @@
 [theme]
-primaryColor = "#915f02"              # Marrone-ocra per pulsanti e accenti
-backgroundColor = "#f4e1b0"           # Ocra chiaro di sfondo principale
-secondaryBackgroundColor = "#fff7da"  # Più chiaro per box e sidebar
-textColor = "#2b1d00"                 # Testo scuro, alta leggibilità
+primaryColor = "#2563eb"
+backgroundColor = "#f9fafb"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#0f172a"
 font = "sans serif"
 
 
