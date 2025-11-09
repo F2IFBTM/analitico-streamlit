@@ -23,35 +23,41 @@ st.set_page_config(
 st.markdown("""
 <style>
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(180deg, #f9fafb 0%, #eef2f7 100%);
+        background: linear-gradient(180deg, #f4e1b0 0%, #fff7da 100%);
     }
+
     h1 {
         text-align: center;
-        color: #0f172a;
+        color: #2b1d00;
         font-weight: 700;
         font-size: 2rem;
         margin-top: 0.5em;
         margin-bottom: 1em;
     }
+
     h2, h3 {
-        color: #1e293b;
-        border-left: 5px solid #2563eb;
+        color: #3b2a00;
+        border-left: 5px solid #915f02;
         padding-left: 10px;
         margin-top: 1em;
     }
+
     .stDataFrame {
         border-radius: 12px;
-        box-shadow: 0px 1px 6px rgba(0,0,0,0.1);
+        box-shadow: 0px 1px 6px rgba(0,0,0,0.15);
+        background-color: #fffdf3;
     }
+
     button {
         border-radius: 10px !important;
-        background-color: #2563eb !important;
+        background-color: #915f02 !important;
         color: white !important;
         font-weight: 600 !important;
     }
+
     .stCaption {
         font-size: 0.9em;
-        color: #475569;
+        color: #5c4a00;
     }
 </style>
 """, unsafe_allow_html=True)
