@@ -111,15 +111,7 @@ simboli = sorted(recap_df["symbol"].dropna().unique())
 
 # === Titolo ===
 st.title("📊 Analitico Dati — Elasticità, Aggregati e Previsioni")
-
-# === KPI iniziali ===
-col1, col2, col3 = st.columns(3)
-col1.metric("Simboli analizzati", len(simboli))
-col2.metric("Righe Elasticità", len(recap_df))
-ultima_data = recap_df["date"].max() if "date" in recap_df.columns else "—"
-col3.metric("Ultimo aggiornamento", str(ultima_data))
-
-st.divider()
+st.markdown("---")
 
 # === Selettore simbolo ===
 simbolo_sel = st.selectbox("🔍 Seleziona un simbolo:", simboli)
