@@ -20,6 +20,7 @@ st.set_page_config(
 )
 
 # === CSS personalizzato ===
+
 st.markdown("""
 <style>
     [data-testid="stAppViewContainer"] {
@@ -61,6 +62,7 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+
 
 # === Funzioni cache ===
 @st.cache_data
