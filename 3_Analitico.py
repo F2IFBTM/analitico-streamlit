@@ -23,6 +23,11 @@ st.set_page_config(
 
 st.markdown("""
 <style>
+    /* Font globale */
+    html, body, [class*="css"] {
+        font-family: 'Calibri Light', 'Calibri', 'Segoe UI', sans-serif !important;
+    }
+
     [data-testid="stAppViewContainer"] {
         background: linear-gradient(180deg, #f4e1b0 0%, #fff7da 100%);
     }
@@ -30,10 +35,11 @@ st.markdown("""
     h1 {
         text-align: center;
         color: #2b1d00;
-        font-weight: 700;
+        font-weight: 600;
         font-size: 2rem;
         margin-top: 0.5em;
         margin-bottom: 1em;
+        font-family: 'Calibri Light', 'Calibri', 'Segoe UI', sans-serif !important;
     }
 
     h2, h3 {
@@ -41,6 +47,7 @@ st.markdown("""
         border-left: 5px solid #915f02;
         padding-left: 10px;
         margin-top: 1em;
+        font-family: 'Calibri Light', 'Calibri', 'Segoe UI', sans-serif !important;
     }
 
     .stDataFrame {
@@ -54,6 +61,7 @@ st.markdown("""
         background-color: #915f02 !important;
         color: white !important;
         font-weight: 600 !important;
+        font-family: 'Calibri Light', 'Calibri', 'Segoe UI', sans-serif !important;
     }
 
     .stCaption {
