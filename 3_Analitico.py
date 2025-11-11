@@ -20,57 +20,41 @@ st.set_page_config(
 )
 
 # === CSS personalizzato ===
-
 st.markdown("""
 <style>
-    /* Font globale */
-    html, body, [class*="css"] {
-        font-family: 'Calibri Light', 'Calibri', 'Segoe UI', sans-serif !important;
-    }
-
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(180deg, #f4e1b0 0%, #fff7da 100%);
+        background: linear-gradient(180deg, #f9fafb 0%, #eef2f7 100%);
     }
-
     h1 {
         text-align: center;
-        color: #2b1d00;
-        font-weight: 600;
+        color: #0f172a;
+        font-weight: 700;
         font-size: 2rem;
         margin-top: 0.5em;
         margin-bottom: 1em;
-        font-family: 'Calibri Light', 'Calibri', 'Segoe UI', sans-serif !important;
     }
-
     h2, h3 {
-        color: #3b2a00;
-        border-left: 5px solid #915f02;
+        color: #1e293b;
+        border-left: 5px solid #2563eb;
         padding-left: 10px;
         margin-top: 1em;
-        font-family: 'Calibri Light', 'Calibri', 'Segoe UI', sans-serif !important;
     }
-
     .stDataFrame {
         border-radius: 12px;
-        box-shadow: 0px 1px 6px rgba(0,0,0,0.15);
-        background-color: #fffdf3;
+        box-shadow: 0px 1px 6px rgba(0,0,0,0.1);
     }
-
     button {
         border-radius: 10px !important;
-        background-color: #915f02 !important;
+        background-color: #2563eb !important;
         color: white !important;
         font-weight: 600 !important;
-        font-family: 'Calibri Light', 'Calibri', 'Segoe UI', sans-serif !important;
     }
-
     .stCaption {
         font-size: 0.9em;
-        color: #5c4a00;
+        color: #475569;
     }
 </style>
 """, unsafe_allow_html=True)
-
 
 # === Funzioni cache ===
 @st.cache_data
@@ -126,8 +110,7 @@ recap_df = carica_recap()
 simboli = sorted(recap_df["symbol"].dropna().unique())
 
 # === Titolo ===
-st.title("Aggregati, Previsioni ed Elasticità.")
-st.title("A.P.E.")
+st.title("📊 Analitico Dati — Elasticità, Aggregati e Previsioni")
 st.markdown("---")
 
 # === Selettore simbolo ===
@@ -189,4 +172,3 @@ if simbolo_sel:
                 st.rerun()
             except Exception:
                 st.experimental_rerun()
-
